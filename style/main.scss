@@ -1,5 +1,5 @@
 @import "helpers";
-@import "fonts/clear-sans.css";
+@import "fonts/roboto.css";
 
 $field-width: 500px;
 $grid-spacing: 15px;
@@ -9,30 +9,31 @@ $tile-border-radius: 3px;
 
 $mobile-threshold: $field-width + 20px;
 
-$text-color: #776E65;
-$bright-text-color: #f9f6f2;
+$text-color: #858585;
+$bright-text-color: #ffffff;
 
-$tile-color: #eee4da;
-$tile-gold-color: #edc22e;
+$tile-color: #dddddd;
+$tile-gold-color: #99CC00;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
 $game-container-margin-top: 40px;
-$game-container-background: #bbada0;
+$game-container-background: #aaaaaa;
 
-$transition-speed: 100ms;
+$transition-speed: 60ms;
 
 html, body {
   margin: 0;
   padding: 0;
 
-  background: #faf8ef;
+  background: #f3f3f3;
   color: $text-color;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 100;
   font-size: 18px;
 }
 
 body {
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
 .heading {
@@ -40,11 +41,12 @@ body {
 }
 
 h1.title {
-  font-size: 80px;
-  font-weight: bold;
-  margin: 0;
+  font-size: 70px;
+  font-weight: normal;
+  margin: 0 0 10px;
   display: block;
   float: left;
+  line-height: 70px;
 }
 
 @include keyframes(move-up) {
@@ -71,10 +73,10 @@ h1.title {
   display: inline-block;
   background: $game-container-background;
   padding: 15px 25px;
-  font-size: $height;
+  font-size: $height - 5px;
   height: $height;
   line-height: $height + 22px;
-  font-weight: bold;
+  font-weight: 100;
   border-radius: 3px;
   color: white;
   margin-top: 8px;
@@ -98,7 +100,7 @@ h1.title {
     color: red;
     font-size: $height;
     line-height: $height;
-    font-weight: bold;
+    font-weight: 100;
     color: rgba($text-color, .9);
     z-index: 100;
     @include animation(move-up 600ms ease-in);
@@ -122,12 +124,14 @@ p {
 
 a {
   color: $text-color;
-  font-weight: bold;
+  font-weight: 100;
   text-decoration: underline;
   cursor: pointer;
 }
 
 strong {
+  font-weight: normal;
+  
   &.important {
     text-transform: uppercase;
   }
@@ -158,7 +162,7 @@ hr {
 // Styles for buttons
 @mixin button {
   display: inline-block;
-  background: darken($game-container-background, 20%);
+  background: #99CC00;
   border-radius: 3px;
   padding: 0 20px;
   text-decoration: none;
@@ -208,7 +212,7 @@ hr {
 
       p {
         font-size: 60px;
-        font-weight: bold;
+        font-weight: 100;
         height: 60px;
         line-height: 60px;
         margin-top: 222px;
@@ -292,7 +296,8 @@ hr {
     &, .tile-inner {
       width: ceil($tile-size);
       height: ceil($tile-size);
-      line-height: $tile-size + 10px;
+      line-height: $tile-size;
+      //line-height: $tile-size + 10px;
     }
 
     // Build position classes
@@ -319,7 +324,7 @@ hr {
 
     background: $tile-color;
     text-align: center;
-    font-weight: bold;
+    font-weight: 100;
     z-index: 10;
 
     font-size: 55px;
@@ -337,11 +342,11 @@ hr {
 
   // Colors for all 11 states, false = no special color
   $special-colors: false false, // 2
-                   false false, // 4
-                   #f78e48 true, // 8
-                   #fc5e2e true, // 16
-                   #ff3333 true, // 32
-                   #ff0000 true, // 64
+                   #E2F4FB false, // 4
+                   #A8DFF4 true, // 8
+                   #6DCAEC true, // 16
+                   #33B5E5 true, // 32
+                   #2CB1E1 true, // 64
                    false true, // 128
                    false true, // 256
                    false true, // 512
@@ -363,7 +368,8 @@ hr {
       $bright-color: nth($nth-color, 2);
 
       @if $special-background {
-        $mixed-background: mix($special-background, $mixed-background, 55%);
+        $mixed-background: $special-background;
+        // $mixed-background: mix($special-background, $mixed-background, 55%);
       }
 
       @if $bright-color {
@@ -427,7 +433,7 @@ hr {
 }
 
 .tile-new .tile-inner {
-  @include animation(appear 200ms ease $transition-speed);
+  @include animation(appear 150ms ease $transition-speed);
   @include animation-fill-mode(backwards);
 }
 
@@ -447,7 +453,7 @@ hr {
 
 .tile-merged .tile-inner {
   z-index: 20;
-  @include animation(pop 200ms ease $transition-speed);
+  @include animation(pop 150ms ease $transition-speed);
   @include animation-fill-mode(backwards);
 }
 
@@ -491,8 +497,8 @@ hr {
   }
 
   h1.title {
-    font-size: 27px;
-    margin-top: 15px;
+    font-size: 48px;
+    margin: 0;
   }
 
   .container {
@@ -547,3 +553,4 @@ hr {
     }
   }
 }
+
