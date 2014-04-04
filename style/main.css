@@ -173,7 +173,7 @@ hr {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(221, 221, 221, 0.5);
+    background: rgba(221, 221, 221, 0.85);
     z-index: 100;
     text-align: center;
     -webkit-animation: fade-in 800ms ease 720ms;
@@ -542,7 +542,6 @@ hr {
     margin-bottom: 10px; }
 
   .game-intro {
-    width: 55%;
     display: block;
     box-sizing: border-box;
     line-height: 1.65; }
@@ -580,7 +579,7 @@ hr {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba(221, 221, 221, 0.5);
+      background: rgba(221, 221, 221, 0.85);
       z-index: 100;
       text-align: center;
       -webkit-animation: fade-in 800ms ease 720ms;

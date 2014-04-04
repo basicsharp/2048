@@ -205,7 +205,7 @@ hr {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba($tile-color, .5);
+      background: rgba($tile-color, .85);
       z-index: 100;
 
       text-align: center;
@@ -518,7 +518,7 @@ hr {
 
   // Show intro and restart button side by side
   .game-intro {
-    width: 55%;
+    // width: 55%;
     display: block;
     box-sizing: border-box;
     line-height: 1.65;
