@@ -26,7 +26,7 @@ function LocalStorageManager() {
     if (supported) {
       this.storage = window.localStorage
       try {
-          this.storage = LocalStorage;
+          this.storage = Android;
       } catch (e) {
           console.error("LocalStorage ERROR : can't find android class LocalStorage. switching to raw localStorage");
       }
@@ -40,7 +40,7 @@ LocalStorageManager.prototype.localStorageSupported = function() {
     var testKey = "test";
     var storage = window.localStorage;
     try {
-        storage = LocalStorage;
+        storage = Android;
     } catch (e) {
         console.error("LocalStorage ERROR : can't find android class LocalStorage. switching to raw localStorage");
     }
